@@ -1,0 +1,70 @@
+@import "../variables";
+
+.main {
+    flex: 1 1 auto;
+
+
+
+    .introduction {
+        padding-top: 10vh;
+        height: 60vh;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+
+        .text {
+            width: 100%;
+            backdrop-filter: blur(2px);
+
+
+            .row {
+                @include container;
+                display: flex;
+                font-size: 55px;
+                font-weight: bold;
+
+                .lightText {
+                    margin-left: 10px;
+                    color: rgb(233, 105, 0);
+                }
+            }
+        }
+    }
+
+    .mostPopular {
+        @include container;
+        margin-top: $sectionsMarginTop;
+        display: flex;
+        flex-direction: column;
+
+        .text {
+            @include sectionTitle;
+        }
+
+    }
+
+    .allBooks {
+        @include container;
+        margin-top: $sectionsMarginTop;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .introduction.narrow {
+        padding-top: 0;
+        height: 50vh;
+        margin-top: $sectionsMarginTop;
+
+        .text {
+            .row {
+                font-size: 40px;
+            }
+        }
+    }
+
+
+
+
+
+}

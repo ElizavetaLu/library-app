@@ -1,0 +1,65 @@
+@import '../variables';
+
+.footer {
+    margin-top: $sectionsMarginTop;
+    bottom: 0;
+    height: 10vh;
+
+    .footerContainer {
+        backdrop-filter: blur(10px);
+        box-sizing: border-box;
+        padding: 0px 40px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: aliceblue;
+
+        .footerLogo {
+            color: rgba(0, 0, 0, 0.785);
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
+            padding-top: 3px;
+            border-radius: 4px;
+
+            .footerIcon {
+                width: 35px;
+                margin-right: -9px;
+                rotate: 20deg;
+            }
+
+            .logoText {
+                margin-left: 3px;
+                font-family: 'Fasthand', cursive;
+                font-size: 25px;
+            }
+        }
+
+        .text {
+            font-size: 13px;
+            color: rgba(240, 248, 255, 0.6);
+        }
+
+        .socials {
+            display: flex;
+            align-items: center;
+
+            .title{
+                color: rgba(255, 255, 255, 0.687);
+                margin-right: 10px;
+            }
+
+            .allIcons {
+                display: flex;
+                .media {
+                    img{
+                        width: 30px;
+                    }
+                }
+            }
+
+        }
+    }
+}

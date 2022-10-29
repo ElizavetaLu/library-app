@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@mixin container() {
+   width: 90%;
+   margin: 0 auto;
+}
+
+@mixin sectionTitle() {
+   color: rgb(31, 31, 31);
+   font-size: 28px;
+   font-weight: 500;
+}
+
+
+
+$sectionsMarginTop: 70px;;

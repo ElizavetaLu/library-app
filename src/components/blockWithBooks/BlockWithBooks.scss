@@ -1,0 +1,13 @@
+@import '../../variables';
+
+.block {
+    @include sectionTitle;
+    @include container;
+    margin-top: $sectionsMarginTop;
+
+    .allBooksBlock {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

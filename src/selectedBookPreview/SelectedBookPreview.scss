@@ -1,0 +1,112 @@
+@import '../variables';
+
+.previewContent {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .previewWrapper {
+        width: 100vw;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .previewContainer {
+            background-color: rgba(0, 0, 0, 0.232);
+            backdrop-filter: blur(15px);
+            padding: 15vh 10vh 10vh;
+            display: flex;
+
+
+            .bookImage {
+                margin-right: 20px;
+                height: 380px;
+
+                img {
+                    border-radius: 4px;
+                    width: 280px;
+                    height: 380px;
+                }
+            }
+
+            .fullInfo {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 100%;
+                    margin-bottom: 30px;
+
+                    .name {
+                        color: #fff;
+                        font-size: 38px;
+                        font-weight: 500;
+                    }
+
+                    .year {
+                        color: rgba(255, 255, 255, 0.63);
+                        font-size: 26px;
+                        font-weight: 400;
+                    }
+
+                    .author {
+                        font-size: 16px;
+                        color: rgba(255, 255, 255, 0.842);
+                    }
+
+                    .createdEditions {
+                        display: flex;
+                        font-size: 16px;
+
+                        .text {
+                            margin-right: 7px;
+                            color: rgba(255, 255, 255, 0.654);
+                        }
+
+                        .amount {
+                            margin-right: 7px;
+                            color: rgba(255, 255, 255, 0.817);
+                        }
+                    }
+
+                    .raiting {
+                        display: flex;
+                        align-items: center;
+
+                        .icon {
+                            img {
+                                margin-left: 5px;
+                                width: 20px;
+                            }
+                        }
+                    }
+
+                    .description {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .recent {
+        @include container;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        margin-top: $sectionsMarginTop;
+
+        .text {
+            @include sectionTitle;
+        }
+
+        .recentView {
+            display: flex;
+            overflow-x: scroll;
+        }
+    }
+}

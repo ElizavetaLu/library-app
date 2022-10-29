@@ -1,0 +1,27 @@
+@import '../../variables';
+
+
+.books-row {
+    min-height: 100px;
+    @include container;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: flex-start;
+    margin-top: $sectionsMarginTop;
+
+    .books-row__title {
+        @include sectionTitle;
+    }
+
+    .books-row__all-books {
+        display: flex;
+        overflow-x: scroll;
+
+        .empty-row-text{
+            font-size: 16px;
+            width: 500px;
+            color: rgba(0, 0, 0, 0.284);
+        }
+    }
+}

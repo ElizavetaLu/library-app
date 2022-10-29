@@ -1,0 +1,29 @@
+a {
+    text-decoration: none;
+    
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    padding: 3px 0px;
+
+    .genIcon {
+        margin-right: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 15px;
+        }
+    }
+
+    .genreName {
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .genreName:hover {
+        color: rgb(151, 50, 0);
+        border-bottom: 1px solid rgb(151, 50, 0);
+    }
+}
