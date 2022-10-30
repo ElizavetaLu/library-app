@@ -31,6 +31,7 @@ const Header = (props) => {
                                 <div className="navbarDropDownList">
                                     <NavBarItem title={'Literary Fiction'} />
                                     <NavBarItem title={'Mystery'} />
+                                    <NavBarItem title={'Ramance'} />
                                     <NavBarItem title={'Thriller'} />
                                     <NavBarItem title={'Horror'} />
                                     <NavBarItem title={'Historical'} />

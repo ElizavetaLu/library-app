@@ -1,22 +1,22 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import BookCard from "../components/bookCard/BookCard";
 import Button from "../components/button/Button";
-import HorizontalLine from "../components/horizontalLine/HorizontalLine";
 import "./SelectedBookPreview.scss"
 
 const SelectedBookPreview = (props) => {
-console.log(props)
-
-
 
 const bookData = props.specificBook
+
 const bookDataObj = {
     name: bookData.name,
-    cover: bookData.cover,
-    id: bookData.book_id,
     rating: bookData.rating,
+    cover: bookData.cover,
+    book_id: bookData.book_id,
 }
+
+const checkObj = Object.keys(bookData).length === 0 && bookData.constructor === Object
+if(checkObj)  <div className="previewContent"></div>
+
     return (
         <div className="previewContent">
             <div className="previewWrapper"
@@ -28,10 +28,12 @@ const bookDataObj = {
                 <div className="previewContainer">
                     <div className="bookImage">
                         {bookData.cover ? <img src={bookData.cover} alt="book cover" /> : <img src="/boy-1528150__480.jpg" alt="" />}
+                        {/* {data.cover ? <img src={data.cover} alt="book cover" /> : <img src="/boy-1528150__480.jpg" alt="" />} */}
                     </div>
                     <div className="fullInfo">
                         <div className="info">
                             <div className="name">{bookData.name}</div>
+                            {/* <div className="name">{data.name}</div> */}
                             <div className="year"> {bookData.published_date}</div>
                             <div className="author"> {bookData.authors}</div>
                             <div className="createdEditions">
@@ -40,6 +42,7 @@ const bookDataObj = {
                             </div>
                             <div className="raiting">
                                 <div className="rate">{bookData.rating}/5</div>
+                                {/* <div className="rate">{data.rating}/5</div> */}
                                 <div className="icon">
                                     <img src="/icons/star.png" alt="" />
                                 </div>
@@ -47,9 +50,9 @@ const bookDataObj = {
                             <div className="description">{bookData.synopsis}</div>
                         </div>
                         <div className="buttons">
-                            <Button content={'Add on shelf'} action={()=>props.onAdd(bookDataObj)} />
+                            <Button content={'Add on shelf'} action={props.onAdd} funcParam={bookDataObj}/>
                             <Button content={'Read now'} />
-                            <Button content={'Mark as read'} action={()=>props.onMarkAsRead(bookDataObj)}/>
+                            <Button content={'Mark as read'} action={props.onMarkAsRead} funcParam={bookDataObj}/>
                         </div>
                     </div>
                 </div>
