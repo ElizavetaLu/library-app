@@ -6,7 +6,7 @@ const BlockWithBooks = (props) => {
 
     let allBooks = props.genreBooks ? props.genreBooks.map(book => <BookCard
         book_id={book.book_id}
-        // key={book.book_id + 1}
+        key={book.book_id}
         name={book.name}
         rating={book.rating}
         cover={book.cover}

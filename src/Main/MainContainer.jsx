@@ -8,7 +8,7 @@ import Main from "./Main";
 
 
 const MainContainer = (props) => {
-
+// console.log(props)
 
     const [monthPopBooks, setMonthPopBooks] = useState([])
 

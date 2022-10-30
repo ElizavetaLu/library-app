@@ -16,7 +16,6 @@ const App = () => {
   const [shelfItems, setShelfItems] = useState(shelfItemsFromLocalStorage);
   const [finishedBooks, setFinishedBooks] = useState(finishedBooksFromLocalStorage);
 
-
   useEffect(() => {
     localStorage.setItem('shelfItems', JSON.stringify(shelfItems))
   }, [shelfItems])
@@ -25,36 +24,51 @@ const App = () => {
     localStorage.setItem('finishedBooks', JSON.stringify(finishedBooks))
   }, [finishedBooks])
 
-
-  
-
   const onAdd = (book) => {
-    // console.log(book)
-    const exist = shelfItems.find(item => item.id === book.id)
+    const exist = shelfItems.find(item => item.book_id === book.book_id)
 
     if (!exist) {
-      setShelfItems([...shelfItems, book])
+      return setShelfItems([...shelfItems, book])
     } else {
-      const deleted = shelfItems.filter(item => item.id !== book.id);
-      setShelfItems(deleted);
+      const deleted = shelfItems.filter(item => item.book_id !== book.book_id);
+      return setShelfItems(deleted);
     }
   }
 
 
-  const onMarkAsRead = (book) => setFinishedBooks([...finishedBooks, book])
+  const onMarkAsRead = (book) => {
+    const exist = finishedBooks.find(item => item.book_id === book.book_id)
+    return exist ? null : setFinishedBooks([...finishedBooks, book])
+  }
 
-  console.log(shelfItems)
-  console.log(finishedBooks)
+  // console.log(shelfItems)
+  // console.log(finishedBooks)
 
   return (
 
     <div className="mainWrapper">
       <Header shelfItems={shelfItems} />
       <Routes>
-        <Route path='/bookshelf' element={<MyBooks shelfItems={shelfItems} finishedBooks={finishedBooks}/>} />
-        <Route path='/' element={<MainContainer onAdd={onAdd} shelfItems={shelfItems}/>} />
-        <Route path='/preview/:name' element={<SelectedBookContainer onAdd={onAdd} onMarkAsRead={onMarkAsRead}/>} />
-        <Route path='/genre/:name' element={<SelectedGenreContainer shelfItems={shelfItems}/>} />
+        <Route path='/' element={<MainContainer
+          onAdd={onAdd}
+          shelfItems={shelfItems}
+          onMarkAsRead={onMarkAsRead} />} />
+
+        <Route path='/bookshelf' element={<MyBooks
+          shelfItems={shelfItems}
+          finishedBooks={finishedBooks}
+          onAdd={onAdd}
+          onMarkAsRead={onMarkAsRead} />} />
+
+        <Route path='/preview/:name' element={<SelectedBookContainer
+          onAdd={onAdd}
+          onMarkAsRead={onMarkAsRead} />} />
+
+        <Route path='/genre/:name' element={<SelectedGenreContainer
+          finishedBooks={finishedBooks}
+          onAdd={onAdd}
+          onMarkAsRead={onMarkAsRead}
+          shelfItems={shelfItems} />} />
       </Routes>
       <Footer />
     </div>

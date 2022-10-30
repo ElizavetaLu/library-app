@@ -6,16 +6,27 @@ import "./BookCard.scss"
 
 const BookCard = (props) => {
     // console.log(props)
+    const [status, setStatus] = useState(false)
 
     let clickedBookData = { name: props.name, rating: props.rating, cover: props.cover, book_id: props.book_id }
 
-    let exist = props.shelfItems ? props.shelfItems.find(item => item.book_id === props.book_id) : false;
 
-    const [status, setStatus] = useState(false)
+    
+    let exist = props.shelfItems ? props.shelfItems.find(item => item.book_id === props.book_id) : false;
 
     useEffect(() => {
         exist ? setStatus(true) : setStatus(false)
-    },[exist])
+    }, [exist])
+
+
+
+
+//     let test = props.finishedBooks.find(book => {
+//         let match = props.shelfItems.find(item => item.book_id === book.book_id)
+//         return book.book_id === match.book_id
+//     })
+// // console.log(test)
+//     if(test){()=>props.onAdd(clickedBookData)}
 
 
     return (
@@ -43,7 +54,8 @@ const BookCard = (props) => {
 
                 </div>
                 <div className="cta">
-                    <NavLink to={`/preview/${props.name}`} className="link" state={{ book_id: props.book_id }}>
+                    {/* <NavLink to={`/preview/${props.name}`} className="link" state={{ book_id: props.book_id }}> */}
+                    <NavLink to={`/preview/${props.name}`} className="link" state={{ clickedBookData }}>
                         <Button content={'Show more'} />
                     </NavLink>
                 </div>
