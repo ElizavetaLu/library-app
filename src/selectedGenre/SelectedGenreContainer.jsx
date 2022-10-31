@@ -7,13 +7,14 @@ import SelectedGenre from "./SelectedGenre"
 
 const SelectedGenreContainer = (props) => {
     let { name } = useParams()
-    // console.log(name)
+
+    // console.log(name.toLocaleLowerCase())
     // const data = new Date
     // const currentYear = data.getFullYear()
 
     const options = {
         method: 'GET',
-        url: `https://hapi-books.p.rapidapi.com/nominees/${name.toLocaleLowerCase}/2020`,
+        url: `https://hapi-books.p.rapidapi.com/nominees/${name.toLocaleLowerCase()}/2020`,
         headers: {
             'X-RapidAPI-Key': '794aa797f4msh0d4e2c284c4c4f3p1a8f0bjsnd03998d95072',
             'X-RapidAPI-Host': 'hapi-books.p.rapidapi.com'

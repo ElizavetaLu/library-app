@@ -3,7 +3,7 @@ import "./Footer.scss"
 
 const Footer = () => {
     return (
-        <div className="footer" style={{ backgroundImage: `url("/books-1281581__480.jpg")` }}>
+        <div className="footer" style={{ backgroundImage: `url("/library-app/build/books-1281581__480.jpg")` }}>
             <div className="footerContainer">
             <div className="footerLogo">
                     <div className="footerIcon">
