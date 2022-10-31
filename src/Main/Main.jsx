@@ -35,7 +35,7 @@ const Main = (props) => {
     // ]
     return (
         <div className="main">
-            <div className="introduction" style={{ backgroundImage: `url("/cup-791072_1920.jpg")` }}>
+            <div className="introduction" style={{ backgroundImage: `url("/library-app/build/cup-791072_1920.jpg")` }}>
                 <div className="text">
                     <div className="row">
                         <div className="darkText">Read</div>
@@ -67,7 +67,7 @@ const Main = (props) => {
 
             <RowWithBooks allBooksArr={props.monthPopBooks} title={'Top 15 most popular books in current month:'} {...props} />
 
-            <div className="introduction narrow" style={{ backgroundImage: `url("/scott-webb-C6oPXOatFD8-unsplash.jpg")` }}>
+            <div className="introduction narrow" style={{ backgroundImage: `url("/library-app/build/scott-webb-C6oPXOatFD8-unsplash.jpg")` }}>
                 <div className="text">
                     <div className="row">
                         <div className="darkText">Put </div>
