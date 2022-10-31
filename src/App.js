@@ -49,22 +49,22 @@ const App = () => {
     <div className="mainWrapper">
       <Header shelfItems={shelfItems} />
       <Routes>
-        <Route path='/' element={<MainContainer
+        <Route path='/library-app/build/' element={<MainContainer
           onAdd={onAdd}
           shelfItems={shelfItems}
           onMarkAsRead={onMarkAsRead} />} />
 
-        <Route path='/bookshelf' element={<MyBooks
+        <Route path='/library-app/build/bookshelf' element={<MyBooks
           shelfItems={shelfItems}
           finishedBooks={finishedBooks}
           onAdd={onAdd}
           onMarkAsRead={onMarkAsRead} />} />
 
-        <Route path='/preview/:name' element={<SelectedBookContainer
+        <Route path='/library-app/build/preview/:name' element={<SelectedBookContainer
           onAdd={onAdd}
           onMarkAsRead={onMarkAsRead} />} />
 
-        <Route path='/genre/:name' element={<SelectedGenreContainer
+        <Route path='/library-app/build/genre/:name' element={<SelectedGenreContainer
           finishedBooks={finishedBooks}
           onAdd={onAdd}
           onMarkAsRead={onMarkAsRead}
