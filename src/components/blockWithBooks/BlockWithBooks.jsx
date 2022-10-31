@@ -4,7 +4,7 @@ import "./BlockWithBooks.scss";
 
 const BlockWithBooks = (props) => {
 
-    let allBooks = props.genreBooks ? props.genreBooks.map(book => <BookCard
+    let allBooks = props.allBooksArr ? props.allBooksArr.map(book => <BookCard
         book_id={book.book_id}
         key={book.book_id}
         name={book.name}
@@ -14,6 +14,7 @@ const BlockWithBooks = (props) => {
         {...props}
 
     />) : null
+
 
     return (
         <div className="block">

@@ -2,12 +2,12 @@ import React from "react";
 import BlockWithBooks from "../components/blockWithBooks/BlockWithBooks";
 import "./SelectedGenre.scss"
 
-const SelectedGenre = ({ name, genreBooks, props }) => {
+const SelectedGenre = ({ name, allBooksArr, props }) => {
 
 
     return (
         <div className="genreWrapper">
-            <BlockWithBooks title={name} genreBooks={genreBooks} {...props}/>
+            <BlockWithBooks title={name} allBooksArr={allBooksArr} {...props}/>
         </div>
     )
 }

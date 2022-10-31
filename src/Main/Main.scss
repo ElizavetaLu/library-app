@@ -15,7 +15,9 @@
         .text {
             width: 100%;
             backdrop-filter: blur(2px);
-
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
 
             .row {
                 @include container;
@@ -26,6 +28,10 @@
                 .lightText {
                     margin-left: 10px;
                     color: rgb(233, 105, 0);
+                    white-space: nowrap;
+                }
+                .darkText{
+                    white-space: nowrap;
                 }
             }
         }

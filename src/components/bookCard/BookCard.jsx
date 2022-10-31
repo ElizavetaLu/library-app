@@ -33,13 +33,13 @@ const BookCard = (props) => {
         <div className="bookCardWrapper" >
             <div onClick={() => { props.onAdd(clickedBookData) }} >
                 {status
-                    ? <img src="/icons/fullShelf.png" alt="shelf" title="Remove from shelf" className="shelf" />
-                    : <img src="/icons/emtShelf.png" alt="shelf" title="Add on shelf" className="shelf" />
+                    ? <img src="/library-app/build/icons/fullShelf.png" alt="shelf" title="Remove from shelf" className="shelf" />
+                    : <img src="/library-app/build/icons/emtShelf.png" alt="shelf" title="Add on shelf" className="shelf" />
                 }
             </div>
             <div className="container">
                 <div className="bookImage">
-                    {props.cover ? <img src={props.cover} alt="book" className="book" /> : <img src="/boy-1528150__480.jpg" alt="book" className="book" />}
+                    {props.cover ? <img src={props.cover} alt="book" className="book" /> : <img src="/library-app/build/boy-1528150__480.jpg" alt="book" className="book" />}
 
                 </div>
 
@@ -47,7 +47,7 @@ const BookCard = (props) => {
                     <div className="raiting">
                         <div className="bookrRate">{props.rating}/5</div>
                         <div className="icon">
-                            <img src="/icons/star.png" alt="rate" />
+                            <img src="/library-app/build/icons/star.png" alt="rate" />
                         </div>
                     </div>
                     <div className="bookName" title={props.name}>{props.name}</div>

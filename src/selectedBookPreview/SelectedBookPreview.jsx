@@ -27,8 +27,8 @@ if(checkObj)  <div className="previewContent"></div>
 
                 <div className="previewContainer">
                     <div className="bookImage">
-                        {bookData.cover ? <img src={bookData.cover} alt="book cover" /> : <img src="/boy-1528150__480.jpg" alt="" />}
-                        {/* {data.cover ? <img src={data.cover} alt="book cover" /> : <img src="/boy-1528150__480.jpg" alt="" />} */}
+                        {bookData.cover ? <img src={bookData.cover} alt="book cover" /> : <img src="/library-app/build/boy-1528150__480.jpg" alt="" />}
+                        {/* {data.cover ? <img src={data.cover} alt="book cover" /> : <img src="/library-app/build/boy-1528150__480.jpg" alt="" />} */}
                     </div>
                     <div className="fullInfo">
                         <div className="info">
@@ -44,7 +44,7 @@ if(checkObj)  <div className="previewContent"></div>
                                 <div className="rate">{bookData.rating}/5</div>
                                 {/* <div className="rate">{data.rating}/5</div> */}
                                 <div className="icon">
-                                    <img src="/icons/star.png" alt="" />
+                                    <img src="/library-app/build/icons/star.png" alt="" />
                                 </div>
                             </div>
                             <div className="description">{bookData.synopsis}</div>

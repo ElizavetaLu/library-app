@@ -23,17 +23,17 @@ const SelectedGenreContainer = (props) => {
 
     const [genreBooks, setGenreBooks] = useState([])
 
-    useEffect(() => {
-        async function getData() {
-            await axios.request(options).then(response => {
-                console.log(response)
-                return setGenreBooks(response.data);
-            }).catch(error => console.error(error));
-        }
-        getData()
-    }, [])
+    // useEffect(() => {
+    //     async function getData() {
+    //         await axios.request(options).then(response => {
+    //             console.log(response)
+    //             return setGenreBooks(response.data);
+    //         }).catch(error => console.error(error));
+    //     }
+    //     getData()
+    // }, [true])
 
-    return <SelectedGenre name={name} genreBooks={genreBooks} {...props}/>
+    return <SelectedGenre name={name} allBooksArr={genreBooks} {...props}/>
 }
 
 export default SelectedGenreContainer
