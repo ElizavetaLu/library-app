@@ -54,8 +54,7 @@ const BookCard = (props) => {
 
                 </div>
                 <div className="cta">
-                    {/* <NavLink to={`/preview/${props.name}`} className="link" state={{ book_id: props.book_id }}> */}
-                    <NavLink to={`/preview/${props.name}`} className="link" state={{ clickedBookData }}>
+                    <NavLink to={`/library-app/build/preview/${props.name}`} className="link" state={{ clickedBookData }}>
                         <Button content={'Show more'} />
                     </NavLink>
                 </div>

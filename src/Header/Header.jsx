@@ -15,7 +15,7 @@ const Header = (props) => {
     return (
         <div className="header" >
             <div className="container">
-                <Link to={'/'} className="logoLink">
+                <Link to={'/library-app/build/'} className="logoLink">
                     <div className="logo">
                         <div className="icon">
                             <img src="/library-app/build/icons/book-svgrepo-com.svg" alt="logo" />
@@ -62,7 +62,7 @@ const Header = (props) => {
                     <input type="submit" value="search" className="search-button" />
                 </div>
 
-                <Link to={'/bookshelf'} className="myBooksLink">
+                <Link to={'/library-app/build/bookshelf'} className="myBooksLink">
                     <div className="myBooks">
                         <div className="text">My books</div>
                         {props.shelfItems.length === 0
