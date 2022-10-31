@@ -21,16 +21,16 @@ const SelectedBookContainer = (props) => {
 
     let bookData = location.state.clickedBookData
     const [specificBook, setSpecificBook] = useState({})
-    // useEffect(() => {
-    //     async function getData() {
-    //         await axios.request(options).then(response => {
-    //             setSpecificBook(response.data);
-    //         }).catch(function (error) {
-    //             console.error(error);
-    //         });
-    //     }
-    //     getData()
-    // },[])
+    useEffect(() => {
+        async function getData() {
+            await axios.request(options).then(response => {
+                setSpecificBook(response.data);
+            }).catch(function (error) {
+                console.error(error);
+            });
+        }
+        getData()
+    },[true])
 
 
     return <SelectedBookPreview specificBook={specificBook} {...props} bookData={bookData}/>

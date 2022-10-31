@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="footerContainer">
             <div className="footerLogo">
                     <div className="footerIcon">
-                        <img src="/icons/book-svgrepo-com.svg" alt="logo" />
+                        <img src="/library-app/build/icons/book-svgrepo-com.svg" alt="logo" />
                     </div>
                     <div className="logoText">
                         PipkaBook
@@ -22,16 +22,16 @@ const Footer = () => {
                     <div className="title">Our socials:</div>
                     <div className="allIcons">
                         <div className="media">
-                            <img src="/socials/icons8-instagram-100.png" alt="" />
+                            <img src="/library-app/build/socials/icons8-instagram-100.png" alt="" />
                         </div>
                         <div className="media">
-                            <img src="/socials/icons8-телеграмма-app-96.png" alt="" />
+                            <img src="/library-app/build/socials/icons8-телеграмма-app-96.png" alt="" />
                         </div>
                         <div className="media">
-                            <img src="/socials/icons8-твиттер-96.png" alt="" />
+                            <img src="/library-app/build/socials/icons8-твиттер-96.png" alt="" />
                         </div>
                         <div className="media">
-                            <img src="/socials/icons8-pinterest-96.png" alt="" />
+                            <img src="/library-app/build/socials/icons8-pinterest-96.png" alt="" />
                         </div>
                     </div>
                 </div>

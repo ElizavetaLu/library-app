@@ -7,7 +7,7 @@ const NavBarItem = ({title}) => {
     return (
         <Link to={`/genre/${title}`} target="_blank">
             <div className="genIcon">
-                <img src="/icons/icons8-open-book-50.png" alt="" />
+                <img src="/library-app/build/icons/icons8-open-book-50.png" alt="" />
             </div>
             <div className="genreName">{title}</div>
         </Link>
