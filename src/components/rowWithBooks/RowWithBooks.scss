@@ -10,18 +10,19 @@
     align-self: flex-start;
     margin-top: $sectionsMarginTop;
 
-    .books-row__title {
+    .title {
         @include sectionTitle;
+        margin-bottom: 20px;
     }
 
-    .books-row__all-books {
+    .books-list {
+        padding: 15px 0px;
         display: flex;
         overflow-x: scroll;
 
-        .empty-row-text{
+        .empty-row-text {
             font-size: 16px;
             width: 500px;
-            color: rgba(0, 0, 0, 0.284);
         }
     }
 }

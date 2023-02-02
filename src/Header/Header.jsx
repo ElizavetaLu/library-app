@@ -1,28 +1,19 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import HorizontalLine from "../components/horizontalLine/HorizontalLine";
+import { Link } from "react-router-dom";
 import NavBarItem from "../components/navBarItem/NavBarItem";
 import "./Header.scss"
 
 const Header = (props) => {
 
     const [genre, setGenre] = useState(false);
-    const [menu, setMenu] = useState(false)
-    const openGenre = () => genre ? setGenre(false) : setGenre(true);
-    const openMenu = () => menu ? setMenu(false) : setMenu(true);
-
+    const [menu, setMenu] = useState(false);
 
     return (
         <div className="header" >
             <div className="container">
                 <Link to={'/library-app/build/'} className="logoLink">
                     <div className="logo">
-                        <div className="icon">
-                            <img src="/library-app/build/icons/book-svgrepo-com.svg" alt="logo" />
-                        </div>
-                        <div className="logoText">
-                            PipkaBook
-                        </div>
+                        <img src="/icons/logo.png" alt="logo" className="logo-img" />
                     </div>
                 </Link>
 
@@ -32,9 +23,9 @@ const Header = (props) => {
                     </div>
 
                     <div className="itemText" >
-                        <div className="itemTextLink" onMouseEnter={openGenre}>Genre</div>
+                        <div className="itemTextLink" onMouseEnter={() => setGenre(!genre)}>Genre</div>
                         {genre
-                            ? <div className="navbarDropDown" onMouseLeave={openGenre}>
+                            ? <div className="navbarDropDown" onMouseLeave={() => setGenre(!genre)}>
                                 <div className="navbarDropDownList">
                                     <NavBarItem title={'Literary Fiction'} />
                                     <NavBarItem title={'Mystery'} />
@@ -59,58 +50,42 @@ const Header = (props) => {
 
                 <div className="search">
                     <input type="text" className="search-txt-input" name="q" maxLength="100" placeholder="What are you looking for?" />
-                    <input type="submit" value="search" className="search-button" />
+                    <input type="submit" value="Search" className="search-button" />
                 </div>
 
                 <Link to={'/library-app/build/bookshelf'} className="myBooksLink">
                     <div className="myBooks">
                         <div className="text">My books</div>
-                        {props.shelfItems.length === 0
-                            ? <img src="/library-app/build/icons/empHeaderShelf.png" alt="" />
-                            : <div className="icon">
-                                <img src="/library-app/build/icons/fullHeaderShelf.png" alt="" />
-                                <div className="new">New</div>
-                            </div>
-                        }
+                        <div className="icon">
+                            <img src={`/library-app/build//icons/${props.shelfItems.length === 0 ? 'emp' : 'full'}HeaderShelf.png`} alt="" />
+                        </div>
                     </div>
                 </Link>
 
-                <div className="menu" onClick={openMenu}>
-                    <img src="/library-app/build/icons/menu.png" alt="" />
+                <div className="menu" onClick={() => setMenu(!menu)}>
+                    <img src="/icons/menu.png" alt="" />
 
                     {menu
                         ?
-                        <div className="menuDropDown" onMouseLeave={openMenu}>
+                        <div className="menuDropDown" onMouseLeave={() => setMenu(!menu)}>
                             <div className="items">
                                 <div className="row">
-                                    <div className="itemIcon">
-                                        <img src="/library-app/build/icons/icons8-pencil-drawing-material-outlined-32.png" alt="" />
-                                    </div>
                                     <Link className="singleItem">About</Link>
                                 </div>
                                 <div className="row">
-                                    <div className="itemIcon">
-                                        <img src="/library-app/build/icons/icons8-storytelling-50.png" alt="" />
-                                    </div>
                                     <Link className="singleItem">Genre</Link>
                                 </div>
                                 <div className="row">
-                                    <div className="itemIcon">
-                                        <img src="/library-app/build/icons/icons8-phone-book-64.png" alt="" />
-                                    </div>
                                     <Link className="singleItem">Contacts</Link>
                                 </div>
                                 <div className="row">
-                                    <div className="itemIcon">
-                                        <img src="/library-app/build/icons/icons8-services-50.png" alt="" />
-                                    </div>
                                     <Link className="singleItem">Settings</Link>
+                                </div>
+                                <div className="row">
+                                    <input type="text" className="searchTxt" maxLength="100" placeholder="Search..." />
                                 </div>
                             </div>
 
-                            <div className="search">
-                                <input type="text" className="searchTxt" maxLength="100" placeholder="What are you looking for?" />
-                            </div>
                         </div>
                         : null}
                 </div>

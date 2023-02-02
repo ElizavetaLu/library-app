@@ -7,11 +7,49 @@
 }
 
 @mixin sectionTitle() {
-   color: rgb(31, 31, 31);
+   color: #0c2540;
    font-size: 28px;
    font-weight: 500;
 }
 
 
+@mixin flex-center() {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
 
-$sectionsMarginTop: 70px;;
+
+@mixin main-button() {
+   align-items: center;
+   background-clip: padding-box;
+   background-color: #fa6400;
+   border: 1px solid transparent;
+   border-radius: 4px;
+   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+   box-sizing: border-box;
+   color: #fff;
+   cursor: pointer;
+   display: inline-flex;
+   font-size: 15px;
+   font-weight: 500;
+   letter-spacing: 0.5px;
+   justify-content: center;
+   line-height: 1.25;
+   margin: 0;
+   min-height: 2.7rem;
+   padding: calc(.6rem - 1px) calc(1.5rem - 1px);
+   position: relative;
+   text-decoration: none;
+   transition: all 250ms;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   vertical-align: baseline;
+   width: auto;
+}
+
+
+
+$sectionsMarginTop: 70px;
+;

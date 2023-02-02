@@ -1,9 +1,10 @@
+@import "../variables";
+
 .header {
     position: fixed;
     z-index: 100;
     width: 100%;
-    height: 10vh;
-
+    height: 80px;
 
     .container {
         box-sizing: border-box;
@@ -12,27 +13,18 @@
         align-items: center;
         height: 100%;
         padding: 0px 40px;
-        background: rgb(255, 229, 213);
-        background: linear-gradient(180deg, rgba(255, 229, 213, 0.9528405112044818) 35%, rgba(255, 255, 255, 0) 100%);
-
+        background-color: rgba(255, 255, 255, 0.976);
+        border-bottom: 1px solid rgb(243, 243, 243);
 
         .logo {
-            display: flex;
-            align-items: center;
+            @include flex-center;
+            width: 100px;
             padding-right: 10px;
             padding-top: 3px;
             border-radius: 4px;
 
-            .icon {
-                width: 35px;
-                margin-right: -9px;
-                rotate: 20deg;
-            }
-
-            .logoText {
-                margin-left: 3px;
-                font-family: 'Fasthand', cursive;
-                font-size: 25px;
+            .logo-img {
+                width: 100px;
             }
         }
 
@@ -44,22 +36,19 @@
                 position: relative;
 
                 .itemTextLink {
-                    border-bottom: 1px solid;
-                    cursor: default;
+                    cursor: pointer;
+                    font-size: 18px;
                 }
 
                 .navbarDropDown {
                     position: absolute;
                     margin-top: 2px;
-                    max-height: 200px;
-                    width: 150px;
+                    max-height: 220px;
+                    width: 180px;
                     overflow-y: scroll;
-                    background-color: #0000002d;
-                    padding: 5px;
+                    padding: 8px 10px;
                     border-radius: 4px;
-                    backdrop-filter: blur(10px);
-
-
+                    background-color: rgba(255, 255, 255, 0.976);
 
                     .navbarDropDownList {
                         display: flex;
@@ -71,7 +60,7 @@
             }
 
             .itemText:hover {
-                color: rgb(151, 50, 0);
+                color: #f45c03;
                 border-bottom: none;
             }
         }
@@ -81,82 +70,64 @@
             flex-wrap: nowrap;
 
             .search-txt-input {
-                padding: 10px 20px;
-                font-size: 14px;
-                border: 1px solid #c8c8c8;
-                background-color: rgba(255, 251, 250, 0.549);
-                // border-right: 0px;
-                border-top-left-radius: 4px 4px;
-                border-bottom-left-radius: 4px 4px;
-                width: 300px;
-                backdrop-filter: blur(4px);
+                background-color: transparent;
+                width: 230px;
+                font-size: 16px;
+                padding: 10px 10px 5px 10px;
+                color: #0c2540;
+                border: none;
+                border-bottom: 1px solid rgb(243, 243, 243);
             }
 
             .search-button {
-                padding: 9.8px 15px;
-                font-size: 16px;
-                outline: none;
-                text-align: center;
-                text-decoration: none;
-                color: #ffffff;
-                border: solid 1px #c8c8c8;
-                border-right: 0px;
-                background: #f45c03;
-                border-radius: 0px 4px 4px 0px;
-                position: relative;
-                left: -5px;
+                border: none;
+                color: #fff;
+                background-color: #fa6400;
+                padding: 0px 15px;
+                cursor: pointer;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                font-size: 15px;
+                font-weight: 500;
+                letter-spacing: 0.5px;
             }
 
             .search-button:hover {
-                text-decoration: none;
-                background: #f67c35;
+                background-color: #fa6400ef;
             }
 
-            .search-button::-moz-focus-inner {
-                border: 0;
+            .search-button:active {
+                background-color: #fa6400;
+            }
+
+            .search-txt-input:focus {
+                border-bottom: 1px solid rgb(187, 187, 187);
+
             }
 
         }
 
         a {
             text-decoration: none;
-            color: #000;
+            color: #0c2540;
 
             .myBooks {
                 box-sizing: border-box;
                 display: flex;
-                align-items: center;
-
-                img {
-                    width: 30px;
-                }
+                align-items: flex-end;
+                padding-bottom: 13px;
 
                 .text {
-                    font-size: 16px;
-                    padding-right: 5px;
+                    font-size: 18px;
+                    margin-right: 10px;
                 }
 
                 .icon {
-                    position: relative;
+                    @include flex-center;
+                    width: 35px;
 
                     img {
-                        width: 30px;
-                    }
-
-                    .new {
-                        font-size: 10px;
-                        color: #fff;
-                        top: -5px;
-                        left: 19px;
-                        position: absolute;
-                        width: 20px;
-                        height: 10px;
-                        border-radius: 45%;
-                        padding: 4px;
-                        background-color: #db0000c9;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                        width: 35px;
                     }
                 }
             }
@@ -203,33 +174,51 @@ a:focus {
                 .menuDropDown {
                     position: absolute;
                     top: 30px;
-                    right: 30px;
-                    width: 100px;
-                    max-height: 200px;
-                    background-color: #fff;
-                    padding: 5px;
+                    right: 0;
+                    background-color: rgba(255, 255, 255, 0.976);
+                    padding: 10px 0px;
                     border-radius: 4px;
-                    border: 1px solid rgba(231, 69, 0, 0.299);
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
 
                     .items {
                         display: flex;
                         flex-direction: column;
 
                         .row {
+                            padding: 5px 10px;
                             display: flex;
+                            align-items: center;
 
                             .itemIcon {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
+                                @include flex-center;
+                                width: 30px;
+                                margin-right: 10px;
 
                                 img {
-                                    width: 20px;
+                                    width: 30px;
                                 }
                             }
+
+                            .searchTxt{
+                                border: none;
+                                outline: none;
+                                height: 30px;
+                                font-size: 16px;
+                                padding-left: 5px;
+                            }
+                        }
+
+                        .row:hover {
+                            background-color: #f45b031e;
+                        }
+
+                        .singleItem {
+                            font-size: 18px;
+                            color: #0c2540;
+                        }
+
+                        .singleItem:hover {
+                            color: #f45c03;
+                            border-bottom: none;
                         }
 
                     }

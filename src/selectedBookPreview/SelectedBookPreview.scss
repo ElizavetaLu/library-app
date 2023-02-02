@@ -7,25 +7,38 @@
     align-items: center;
 
     .previewWrapper {
-        width: 100vw;
+        margin-top: 80px;
+        width: 100%;
         background-repeat: no-repeat;
         background-size: cover;
 
         .previewContainer {
             background-color: rgba(0, 0, 0, 0.232);
             backdrop-filter: blur(15px);
-            padding: 15vh 10vh 10vh;
+            padding: 15vh 10vw;
             display: flex;
 
 
             .bookImage {
-                margin-right: 20px;
-                height: 380px;
+                position: relative;
+                margin-right: 90px;
+                height: 500px;
+
+                .circle {
+                    z-index: -1;
+                    position: absolute;
+                    top: 21px;
+                    right: -57px;
+                    width: 450px;
+                    height: 450px;
+                    border-radius: 50%;
+                    background-color: #fa6400f3;
+                }
 
                 img {
+                    height: 500px;
+                    z-index: 100;
                     border-radius: 4px;
-                    width: 280px;
-                    height: 380px;
                 }
             }
 
@@ -37,56 +50,52 @@
                 .info {
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between;
                     height: 100%;
                     margin-bottom: 30px;
 
                     .name {
-                        color: #fff;
-                        font-size: 38px;
-                        font-weight: 500;
+                        font-size: 45px;
+                        font-weight: 600;
+                        letter-spacing: .5px;
+                        margin-bottom: 20px;
                     }
 
-                    .year {
-                        color: rgba(255, 255, 255, 0.63);
-                        font-size: 26px;
-                        font-weight: 400;
-                    }
+                    .row {
+                        font-size: 23px;
+                        color: rgb(229, 229, 229);
+                        margin-bottom: 20px;
 
-                    .author {
-                        font-size: 16px;
-                        color: rgba(255, 255, 255, 0.842);
-                    }
-
-                    .createdEditions {
-                        display: flex;
-                        font-size: 16px;
-
-                        .text {
-                            margin-right: 7px;
-                            color: rgba(255, 255, 255, 0.654);
-                        }
-
-                        .amount {
-                            margin-right: 7px;
-                            color: rgba(255, 255, 255, 0.817);
+                        span {
+                            font-size: 25px;
+                            padding-left: 10px;
+                            color: #fff;
                         }
                     }
 
                     .raiting {
+                        margin-bottom: 20px;
                         display: flex;
                         align-items: center;
+                        font-size: 25px;
 
                         .icon {
+                            @include flex-center;
+                            width: 30px;
+                            margin-right: 10px;
+
                             img {
-                                margin-left: 5px;
-                                width: 20px;
+                                width: 30px
                             }
                         }
                     }
+                }
 
-                    .description {
-                        font-size: 16px;
+                .buttons{
+                    .button{
+                        font-size: 22px;
+                        font-weight: 600;
+                        margin-right: 20px;
+                        padding: 15px 40px
                     }
                 }
             }

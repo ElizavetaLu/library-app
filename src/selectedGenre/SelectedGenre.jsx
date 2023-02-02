@@ -3,7 +3,7 @@ import BlockWithBooks from "../components/blockWithBooks/BlockWithBooks";
 import "./SelectedGenre.scss"
 
 const SelectedGenre = ({ name, allBooksArr, props }) => {
-
+// console.log(allBooksArr)
 
     return (
         <div className="genreWrapper">

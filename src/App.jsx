@@ -5,8 +5,9 @@ import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import MyBooks from './myBooks/MyBooks';
 import SelectedGenreContainer from './selectedGenre/SelectedGenreContainer';
-import SelectedBookContainer from './selectedBookPreview/SelectidBookContainer';
+import SelectedBookContainer from './selectedBookPreview/SelectedBookContainer';
 import MainContainer from './Main/MainContainer';
+
 
 const shelfItemsFromLocalStorage = JSON.parse(localStorage.getItem('shelfItems') || '[]')
 const finishedBooksFromLocalStorage = JSON.parse(localStorage.getItem('finishedBooks') || '[]')
@@ -41,8 +42,6 @@ const App = () => {
     return exist ? null : setFinishedBooks([...finishedBooks, book])
   }
 
-  // console.log(shelfItems)
-  // console.log(finishedBooks)
 
   return (
 
