@@ -3,8 +3,6 @@
 .main {
     flex: 1 1 auto;
 
-
-
     .introduction {
         padding-top: 10vh;
         height: 60vh;
@@ -30,7 +28,8 @@
                     color: rgb(233, 105, 0);
                     white-space: nowrap;
                 }
-                .darkText{
+
+                .darkText {
                     white-space: nowrap;
                 }
             }
@@ -46,7 +45,6 @@
         .text {
             @include sectionTitle;
         }
-
     }
 
     .allBooks {
@@ -68,9 +66,4 @@
             }
         }
     }
-
-
-
-
-
 }

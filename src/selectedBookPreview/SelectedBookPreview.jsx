@@ -1,58 +1,54 @@
-import React from "react";
 import BookCard from "../components/bookCard/BookCard";
 import Button from "../components/button/Button";
+import { defaultList } from "../defaultBooksList";
 import "./SelectedBookPreview.scss"
 
 const SelectedBookPreview = (props) => {
 
-const bookData = props.specificBook
+    const bookData = props.specificBook
 
-const bookDataObj = {
-    name: bookData.name,
-    rating: bookData.rating,
-    cover: bookData.cover,
-    book_id: bookData.book_id,
-}
+    const bookDataObj = {
+        name: bookData.name,
+        rating: bookData.rating,
+        cover: bookData.cover,
+        book_id: bookData.book_id
+    }
 
-const checkObj = Object.keys(bookData).length === 0 && bookData.constructor === Object
-if(checkObj)  <div className="previewContent"></div>
+
+    // const checkObj = Object.keys(bookData).length === 0 && bookData.constructor === Object
+    // if (checkObj) <div className="previewContent"></div>
 
     return (
         <div className="previewContent">
             <div className="previewWrapper"
-                style={
-                    bookData.cover
-                        ? { backgroundImage: `url(${bookData.cover})` }
-                        : { backgroundImage: "url('/boy-1528150__480.jpg')" }}>
-
+                style={{ backgroundImage: bookData.cover ? `url(${bookData.cover})` : "url('/boy-1528150__480.jpg')" }}>
                 <div className="previewContainer">
                     <div className="bookImage">
-                        {bookData.cover ? <img src={bookData.cover} alt="book cover" /> : <img src="/library-app/build/boy-1528150__480.jpg" alt="" />}
-                        {/* {data.cover ? <img src={data.cover} alt="book cover" /> : <img src="/library-app/build/boy-1528150__480.jpg" alt="" />} */}
+                        <div className="circle"></div>
+                        <img src={bookData.cover ? bookData.cover : "/library-app/build//boy-1528150__480.jpg"} alt="" />
                     </div>
                     <div className="fullInfo">
                         <div className="info">
                             <div className="name">{bookData.name}</div>
-                            {/* <div className="name">{data.name}</div> */}
-                            <div className="year"> {bookData.published_date}</div>
-                            <div className="author"> {bookData.authors}</div>
-                            <div className="createdEditions">
-                                <div className="text">Pages:</div>
-                                <div className="amount">{bookData.pages}</div>
-                            </div>
+                            <div className="row">Published: <span>{bookData.published_date}</span></div>
+                            <div className="row">Authors: <span>{bookData.authors}</span></div>
+                            <div className="row">Pages: <span>{bookData.pages}</span></div>
+
                             <div className="raiting">
-                                <div className="rate">{bookData.rating}/5</div>
-                                {/* <div className="rate">{data.rating}/5</div> */}
                                 <div className="icon">
-                                    <img src="/library-app/build/icons/star.png" alt="" />
+                                    <img src="/icons/star.png" alt="" />
                                 </div>
+                                <div className="rate">{bookData.rating}/5</div>
                             </div>
-                            <div className="description">{bookData.synopsis}</div>
+
+                            <div className="row">Description: <span>{bookData.synopsis}</span></div>
                         </div>
                         <div className="buttons">
-                            <Button content={'Add on shelf'} action={props.onAdd} funcParam={bookDataObj}/>
+                            {/* <Button content={'Add on shelf'} action={props.onAdd} /> */}
+                            <Button content={'Add on shelf'} action={props.onAdd} funcParam={bookDataObj} />
                             <Button content={'Read now'} />
-                            <Button content={'Mark as read'} action={props.onMarkAsRead} funcParam={bookDataObj}/>
+                            {/* <Button content={'Mark as read'} action={props.onMarkAsRead} /> */}
+                            <Button content={'Mark as read'} action={props.onMarkAsRead} funcParam={bookDataObj} />
                         </div>
                     </div>
                 </div>
@@ -61,15 +57,19 @@ if(checkObj)  <div className="previewContent"></div>
             <div className="recent">
                 <div className="text">Recents:</div>
                 <div className="recentView">
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
+                    {defaultList.map(book => <BookCard
+
+                        book_id={book.book_id}
+                        key={book.book_id}
+                        name={book.name}
+                        rating={book.rating}
+                        cover={book.cover}
+
+                        shelfItems={defaultList}
+                        finishedBooks={defaultList}
+
+                        {...props}
+                    />)}
                 </div>
             </div>
         </div>
