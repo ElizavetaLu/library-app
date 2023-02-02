@@ -13,11 +13,7 @@ const SelectedBookPreview = (props) => {
         cover: bookData.cover,
         book_id: bookData.book_id
     }
-
-
-    // const checkObj = Object.keys(bookData).length === 0 && bookData.constructor === Object
-    // if (checkObj) <div className="previewContent"></div>
-
+    
     return (
         <div className="previewContent">
             <div className="previewWrapper"
