@@ -13,7 +13,7 @@ const Header = (props) => {
             <div className="container">
                 <Link to={'/library-app/build/'} className="logoLink">
                     <div className="logo">
-                        <img src="/icons/logo.png" alt="logo" className="logo-img" />
+                        <img src="/library-app/build//icons/logo.png" alt="logo" className="logo-img" />
                     </div>
                 </Link>
 
@@ -63,7 +63,7 @@ const Header = (props) => {
                 </Link>
 
                 <div className="menu" onClick={() => setMenu(!menu)}>
-                    <img src="/icons/menu.png" alt="" />
+                    <img src="/library-app/build//icons/menu.png" alt="" />
 
                     {menu
                         ?
