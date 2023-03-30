@@ -1,12 +1,12 @@
 import React from "react";
-import "./Footer.scss"
+import "./Footer.scss";
 
 const Footer = () => {
     return (
         <div className="footer">
             <div className="footerContainer">
                 <div className="logo">
-                    <img src="/icons/logo-light.png" alt="logo" className="logo-img" />
+                    <img src="/library-app/build//icons/logo-light.png" alt="logo" className="logo-img" />
                 </div>
 
                 <div className="text">
@@ -17,16 +17,16 @@ const Footer = () => {
                     <div className="title">Our socials:</div>
                     <div className="allIcons">
                         <div className="media">
-                            <img src="/socials/icons8-instagram-100.png" alt="" />
+                            <img src="/library-app/build//socials/icons8-instagram-100.png" alt="" />
                         </div>
                         <div className="media">
-                            <img src="/socials/icons8-телеграмма-app-96.png" alt="" />
+                            <img src="/library-app/build//socials/icons8-телеграмма-app-96.png" alt="" />
                         </div>
                         <div className="media">
-                            <img src="/socials/icons8-твиттер-96.png" alt="" />
+                            <img src="/library-app/build//socials/icons8-твиттер-96.png" alt="" />
                         </div>
                         <div className="media">
-                            <img src="/socials/icons8-pinterest-96.png" alt="" />
+                            <img src="/library-app/build//socials/icons8-pinterest-96.png" alt="" />
                         </div>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ const SelectedBookPreview = (props) => {
     return (
         <div className="previewContent">
             <div className="previewWrapper"
-                style={{ backgroundImage: bookData.cover ? `url(${bookData.cover})` : "url('/boy-1528150__480.jpg')" }}>
+                style={{ backgroundImage: bookData.cover ? `url(${bookData.cover})` : "url('/library-app/build//boy-1528150__480.jpg')" }}>
                 <div className="previewContainer">
                     <div className="bookImage">
                         <div className="circle"></div>
@@ -32,7 +32,7 @@ const SelectedBookPreview = (props) => {
 
                             <div className="raiting">
                                 <div className="icon">
-                                    <img src="/icons/star.png" alt="" />
+                                    <img src="/library-app/build//icons/star.png" alt="" />
                                 </div>
                                 <div className="rate">{bookData.rating}/5</div>
                             </div>
@@ -40,10 +40,8 @@ const SelectedBookPreview = (props) => {
                             <div className="row">Description: <span>{bookData.synopsis}</span></div>
                         </div>
                         <div className="buttons">
-                            {/* <Button content={'Add on shelf'} action={props.onAdd} /> */}
                             <Button content={'Add on shelf'} action={props.onAdd} funcParam={bookDataObj} />
                             <Button content={'Read now'} />
-                            {/* <Button content={'Mark as read'} action={props.onMarkAsRead} /> */}
                             <Button content={'Mark as read'} action={props.onMarkAsRead} funcParam={bookDataObj} />
                         </div>
                     </div>
